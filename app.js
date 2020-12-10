@@ -1,7 +1,17 @@
 const express = require('express');
-const authRouter = require ('./routes/auth');
-const server = express(); 
+const path = require('path');
 
-server.use("/auth", authRouter);
+const homeRouter= require('./routes/home');
+const blogRouter = require('./routes/blog');
+const contactoRouter = require('./routes/contacto');
+const acercaRouter = require('./routes/acerca');
+
+const server = express(); 
+server.use(express.static(path.join(__dirname, 'public')));
+
+server.use("/", homeRouter);
+server.use("/acerca", acercaRouter);
+server.use("/blog", blogRouter);
+server.use("/contacto", contactoRouter);
 
 server.listen(8080);
