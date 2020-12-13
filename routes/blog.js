@@ -1,9 +1,9 @@
-const express = require('express');
-const controller = require('../controllers/blog');
+import  express from 'express'
+import controller from '../controllers/blog.js'
 
 const router = express.Router()
 
 //la paguina que necesitamos enviar
 router.get('/', controller.renderizarBlog);
 
-module.exports = router
+export default  router

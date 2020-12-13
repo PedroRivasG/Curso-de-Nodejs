@@ -5,24 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/uikit.min.css">
-  <script src="js/uikit.min.js"></script> 
-  <title>Acerca</title>
+  <script src="js/uikit.min.js"></script>  
+  <title><%= path %> </title>
+</head>
 </head>
 
 <body>
-<div class="uk-cover-container uk-height-medium">
+ <div class="uk-cover-container uk-height-medium">
     <img src="img/header.svg" alt="" uk-cover>
     <nav class="uk-navbar-container" uk-navbar>
       <div class="uk-navbar-left">
         <a class="uk-navbar-item uk-logo" href="/"><img src="img/logo.svg"></a>
         <ul class="uk-navbar-nav">
-          <li><a href="/">Inicio</a></li>
-          <li class="uk-active" > <a href="acerca">Acerca</a></li>
-          <li> <a href="blog">Blog</a></li>
+          <li><a href="/">inicio</a></li>
+          <li> <a href="acerca">Acerca</a></li>
+          <li class="uk-active"> <a href="blog">Blog</a></li>
           <li><a href="contacto">Contacto</a></li>
         </ul>
       </div>
     </nav>
   </div>
+
+  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <% posts.forEach(p  => {%>
+    <div>
+      <div class="uk-card uk-card-default uk-card-body">
+        <h1> <%= p.title %> </h1>
+        <%= p.body %>
+      </div>
+    </div>
+    <% }); %>
 </body>
+
 </html>

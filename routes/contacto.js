@@ -1,8 +1,8 @@
-const express = require('express');
-const controller = require('../controllers/contacto');
+import express from 'express'
+import controller from '../controllers/contacto.js'
 
 const router = express.Router()
 
 router.get('/', controller.renderizarContacto);
 
-module.exports = router
+export default  router

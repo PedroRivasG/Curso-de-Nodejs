@@ -1,3 +1,4 @@
-exports.renderizarContacto = (req, res) => {
-    res.sendFile(process.cwd() + "/views/contacto.html");
+export const renderizarContacto = (req, res) => {
+    res.render("contacto.ejs", {path:"Contacto"});
 }
+export default { renderizarContacto }

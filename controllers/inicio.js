@@ -1,3 +1,5 @@
-exports.renderizarInicio = (req, res) => {
-    res.sendFile(process.cwd() + "/views/inicio.html");
+export const renderizarInicio = (req, res) => {
+    res.render("inicio.ejs", {path:"Inicio"});
 }
+
+export default { renderizarInicio }  

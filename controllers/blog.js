@@ -1,4 +1,7 @@
-exports.renderizarBlog = (req, res) => {
-    res.sendFile(process.cwd() + "/views/blog.html");
+import { posts } from '../models/post.js'
+
+export const renderizarBlog = (req, res) => {
+    res.render("blog.ejs", {path:"Blog",  posts : posts});
 }
 
+export default { renderizarBlog }

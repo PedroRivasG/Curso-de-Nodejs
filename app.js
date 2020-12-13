@@ -1,13 +1,15 @@
-const express = require('express');
-const path = require('path');
+import express from 'express'
+import path from 'path'
 
-const inicioRouter= require('./routes/inicio');
-const blogRouter = require('./routes/blog');
-const contactoRouter = require('./routes/contacto');
-const acercaRouter = require('./routes/acerca');
+import inicioRouter from './routes/inicio.js'
+import blogRouter from './routes/blog.js'
+import contactoRouter from './routes/contacto.js'
+import acercaRouter from './routes/acerca.js'
 
 const server = express(); 
-server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(path.join(process.cwd(), 'public')));
+server.set('views', path.join(process.cwd(), "views"));
+server.set('view engine', 'ejs');
 
 server.use("/", inicioRouter);
 server.use("/acerca", acercaRouter);
