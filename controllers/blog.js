@@ -1,7 +1,14 @@
-import { posts } from '../models/post.js'
-
+import { Post } from '../models/post.js'
 export const renderizarBlog = (req, res) => {
-    res.render("blog.ejs", {path:"Blog",  posts : posts});
+    Post.find((err, posts) =>{
+        res.render("blog.ejs", {path:"Blog",  posts : posts});
+    })
 }
 
-export default { renderizarBlog }
+export const post = (req, res) => {
+    const  postRecibido = new Post({ title: req.body.title, body: req.body.body })
+    postRecibido.save((err) => {
+       res.redirect('/');
+    })
+}
+export default { renderizarBlog, post }

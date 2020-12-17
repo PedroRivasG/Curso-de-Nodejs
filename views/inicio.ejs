@@ -3,30 +3,52 @@
 <%- include('./include/head.ejs') %>
 
   <body>
-    <%- include('./include/navbar.ejs') %>
-
-      <section class="uk-text-center" uk-grid>
-        <div class="uk-width-1-2@m">
-          <h1 class="uk-heading-small header-text">Dreams of unique ideas
-            and embrace them.</h1>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    <div class="uk-cover-container uk-height-medium">
+      <img src="img/header.svg" alt="" uk-cover>
+      <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="/"><img src="img/logo.svg"></a>
+          <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/">Inicio</a></li>
+            <li> <a href="acerca">Acerca</a></li>
+            <li> <a href="blog">Blog</a></li>
+            <li> <a href="contacto">Contacto</a></li>
+          </ul>
         </div>
-        <div class="uk-width-1-2@m profile-section">
-          <img src="img/1.png" />
-        </div>
+      </nav>
+    </div>
 
-      </section>
-
+    <body>
+      
       <div class="uk-container">
-        <div class="uk-card uk-card-default uk-card-body">
+        <section class="uk-text-center" uk-grid>
+          <div class="uk-width-1-2@m">
+            <h1 class="uk-heading-small header-text">Dreams of unique ideas
+              and embrace them.</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+          <div class="uk-width-1-2@m">
+            <img src="img/1.png" />
+          </div>
+  
+        </section>
+        <div class="uk-card uk-card-default" uk-grid>
+          <div class="uk-width-1-2@m">
+            <h1 class="uk-card-title">Latest Posts</h1>
+          </div>
+          <div class="uk-width-1-2@m">
+            <button class="uk-button button-primary uk-position-top-right">All</button>
+          </div>
+          <div class="uk-card uk-card-default uk-card-body uk-width-3-3@m">
+            <%- include('./include/blog/item', {title:"Latest", body:"Some post"}) %>
+          </div>
         </div>
       </div>
-  </body>
-
+    </body>
 </html>
