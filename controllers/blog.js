@@ -5,10 +5,22 @@ export const renderizarBlog = (req, res) => {
     })
 }
 
-export const post = (req, res) => {
+export const newPost = (req, res) => {
     const  postRecibido = new Post({ title: req.body.title, body: req.body.body })
     postRecibido.save((err) => {
-       res.redirect('/');
+       res.redirect('/blog');
     })
 }
-export default { renderizarBlog, post }
+
+export const detalle = (req, res) => {
+    Post.findById(req.params.id, (err, post) =>{
+        res.render('post-detalle.ejs', {path: "Post Detalle", post: post})
+    })
+    res.end();
+}
+
+export const renderizarNewPost = (req,res) => {
+    res.render('new-post.ejs', {path:"New Post"});
+}
+
+export default { renderizarBlog, newPost, renderizarNewPost }
