@@ -2,31 +2,41 @@
 <html lang="en">
 <%- include('./include/head.ejs') %>
 
-  <body>
-    <%- include('./include/navbar.ejs') %>
 
-      <section class="uk-text-center" uk-grid>
-        <div class="uk-width-1-2@m">
-          <h1 class="uk-heading-small header-text">Dreams of unique ideas
-            and embrace them.</h1>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-        </div>
-        <div class="uk-width-1-2@m profile-section">
-          <img src="img/1.png" />
-        </div>
-
-      </section>
+<body>
+  <%- include('./include/navbar.ejs') %>
 
       <div class="uk-container">
-        <div class="uk-card uk-card-default uk-card-body">
+        <section class="uk-text-center" uk-grid>
+          <div class="uk-width-1-2@m">
+            <h1 class="uk-heading-small header-text">Dreams of unique ideas
+              and embrace them.</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+          <div class="uk-width-1-2@m">
+            <img src="img/1.png" />
+          </div>
+  
+        </section>
+        <div class="uk-card uk-card-default" uk-grid>
+          <div class="uk-width-1-2@m">
+            <h1 class="uk-card-title">Latest Posts</h1>
+          </div>
+          <div class="uk-width-1-2@m">
+            <button class="uk-button button-primary uk-position-top-right">All</button>
+          </div>
+          <div class="uk-card uk-card-default uk-card-body uk-width-3-3@m">
+            <% post = {title:"Latest", body:"Some post"} %>
+            <%- include('./include/blog/post',post) %>
+          </div>
         </div>
       </div>
-  </body>
+    </body>
 
 </html>

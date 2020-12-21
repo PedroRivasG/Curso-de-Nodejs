@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/uikit.min.css">
-    <script src="js/uikit.min.js"></script> 
-    <title><%= path %> </title>
-  </head>
+  <%- include('./include/head.ejs') %>
 
 <body>
-  <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
-      <a class="uk-navbar-item uk-logo" href="/"><img src="img/logo.svg"></a>
-      <ul class="uk-navbar-nav">
-        <li class="uk-active"><a href="/">Inicio</a></li>
-        <li> <a href="acerca">Acerca</a></li>
-        <li> <a href="blog">Blog</a></li>
-        <li><a href="contacto">contacto</a></li>
-      </ul>
-    </div>
-  </nav>
+  <%- include('./include/navbar.ejs') %>
 
   <div class="uk-container">
     <div class="uk-card uk-card-default uk-card-body">

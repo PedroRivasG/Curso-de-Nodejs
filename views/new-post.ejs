@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./include/head.ejs') %>
+
+  <body>
+    <!-- include the navigation partial -->
+    <%- include('./include/navbar.ejs') %>
+    
+      <div class="uk-container">
+        <div class="uk-card uk-card-default uk-card-body">
+          <h1 class="uk-heading-small uk-center-top">Crear un nuevo Post</h1>
+          <form method="POST" action="new-post">
+            <fieldset class="uk-fieldset">
+              <legend class="uk-legend">Titulo</legend>
+              <div class="uk-margin">
+                <input class="uk-input" name="title" type="text" placeholder="Title">
+              </div>
+              <legend class="uk-legend">Texto</legend>
+              <div class="uk-margin">
+                <textarea class="uk-textarea" name="body" rows="5" placeholder="Body"></textarea>
+              </div>
+              <div class="uk-margin">
+                <button type="submit" class="uk-button  button-primary">Enviar</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+  </body>
+
+</html>
