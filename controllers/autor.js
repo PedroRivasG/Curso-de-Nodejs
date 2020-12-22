@@ -8,24 +8,16 @@ export const renderizarLogin = (req, res) => {
 }
 
 export const registro = (req, res) => {
-    res.renderizarRegistro("registro.ejs", {path:"Registro", errorMessage:{message:"Correo inválido"}})
-    res.end();
-
-    const{nombrecompleto, correo, password} = req.body;
+    const {nombrecompleto, correo, password} = req.body;
     const [primerNombre, primerApellido] = nombrecompleto.split(' ')
     const nuevoUsuario = new Usuario({primerNombre, primerApellido, correo, password})
-    nuevoUsuario.save().then((user) => {
+    nuevoUsuario.save().then((usuario) => {
         res.direct('/');
-        res.end();
     })
     .catch(err => {
         console.log(err);
-        res.status(403, {merrorMessage:{message:"Correo inválido"}})
-        //res.status("registro.ejs", {path:"Registro", error:{"message":"El correo ya existe"}});
+        res.status(500).json({message:{message: "Invalid Email"}});
     })
-
-    res.end();
-    
 }
 
 export const login = (req,res) => {

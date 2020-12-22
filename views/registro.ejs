@@ -6,17 +6,21 @@
     <!-- include the navigation partial -->
     <%- include('./include/navbar.ejs') %>
     <% if (errorMessage) { %>
-        
-      <% } %> 
+      
+    <div class="uk-alert-danger" uk-alert>
+      <a class="uk-alert-close" uk-close></a>
+      <p><%- errorMessage.message %></p>
+  </div>      
+      <% } %>
     
       <div class="uk-container">
         <div class="uk-card uk-card-default uk-card-body">
-          <h1 class="uk-heading-small uk-center-top">Registro</h1>
-          <form method="POST" action="registrar">
+          <h1 class="uk-heading-small uk-center-top">Crear Cuenta</h1>
+          <form method="POST" action="autor/registro">
             <fieldset class="uk-fieldset">
               <legend class="uk-legend">Nombre</legend>
               <div class="uk-margin">
-                <input class="uk-input" name="fullname" type="text" placeholder="Ingrese su nombre">
+                <input class="uk-input" name="nombrecompleto" type="text" placeholder="Ingrese su nombre y apellido">
               </div>
               <legend class="uk-legend">Email</legend>
               <div class="uk-margin">

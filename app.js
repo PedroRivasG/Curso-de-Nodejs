@@ -21,6 +21,6 @@ server.use("/", inicioRouter);
 server.use("/acerca", acercaRouter);
 server.use("/blog", blogRouter);
 server.use("/contacto", contactoRouter);
-server.use('/login', autorRouter);
+server.use('/autor', autorRouter);
 
 server.listen(8080);
