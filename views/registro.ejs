@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./include/head.ejs') %>
+
+  <body>
+    <!-- include the navigation partial -->
+    <%- include('./include/navbar.ejs') %>
+    <% if (errorMessage) { %>
+        
+      <% } %> 
+    
+      <div class="uk-container">
+        <div class="uk-card uk-card-default uk-card-body">
+          <h1 class="uk-heading-small uk-center-top">Registro</h1>
+          <form method="POST" action="registrar">
+            <fieldset class="uk-fieldset">
+              <legend class="uk-legend">Nombre</legend>
+              <div class="uk-margin">
+                <input class="uk-input" name="fullname" type="text" placeholder="Ingrese su nombre">
+              </div>
+              <legend class="uk-legend">Email</legend>
+              <div class="uk-margin">
+                <input class="uk-input" name="email" type="email" rows="5" placeholder="Ingrese su email">
+              </div>
+              <legend class="uk-legend">Contraseña</legend>
+              <div class="uk-margin">
+                <input class="uk-input" name="password" type="password" rows="5" placeholder="Ingrese la Contraseña">
+              </div>
+              <div class="uk-margin">
+                <button type="submit" class="uk-button  button-primary">Registrar</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+  </body>
+
+</html>

@@ -6,6 +6,7 @@ import inicioRouter from './routes/inicio.js'
 import blogRouter from './routes/blog.js'
 import contactoRouter from './routes/contacto.js'
 import acercaRouter from './routes/acerca.js'
+import autorRouter from './routes/autor.js'
 
 dotenv.config();
 conectarDB();
@@ -20,5 +21,6 @@ server.use("/", inicioRouter);
 server.use("/acerca", acercaRouter);
 server.use("/blog", blogRouter);
 server.use("/contacto", contactoRouter);
+server.use('/login', autorRouter);
 
 server.listen(8080);
