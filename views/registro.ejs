@@ -5,13 +5,6 @@
   <body>
     <!-- include the navigation partial -->
     <%- include('./include/navbar.ejs') %>
-    <% if (errorMessage) { %>
-      
-    <div class="uk-alert-danger" uk-alert>
-      <a class="uk-alert-close" uk-close></a>
-      <p><%- errorMessage.message %></p>
-  </div>      
-      <% } %>
     
       <div class="uk-container">
         <div class="uk-card uk-card-default uk-card-body">
@@ -24,7 +17,7 @@
               </div>
               <legend class="uk-legend">Email</legend>
               <div class="uk-margin">
-                <input class="uk-input" name="email" type="email" rows="5" placeholder="Ingrese su email">
+                <input class="uk-input" name="correo" type="email" rows="5" placeholder="Ingrese su email">
               </div>
               <legend class="uk-legend">Contraseña</legend>
               <div class="uk-margin">
