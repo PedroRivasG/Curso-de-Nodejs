@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  
     <%- include('./include/head.ejs') %>
 
   <body>
     <!-- include the navigation partial -->
     <%- include('./include/navbar.ejs') %>
-    
       <div class="uk-container">
         <div class="uk-card uk-card-default uk-card-body">
-          <h1 class="uk-heading-small uk-center-top">Crear Cuenta</h1>
-          <form method="POST" action="autor/registro">
+          <h1 class="uk-heading-small uk-center-top">Login</h1>
+          <form method="POST" action="/">
             <fieldset class="uk-fieldset">
-              <legend class="uk-legend">Nombre</legend>
-              <div class="uk-margin">
-                <input class="uk-input" name="nombrecompleto" type="text" placeholder="Ingrese su nombre y apellido">
-              </div>
               <legend class="uk-legend">Email</legend>
               <div class="uk-margin">
                 <input class="uk-input" name="correo" type="email" rows="5" placeholder="Ingrese su email">
@@ -24,11 +20,11 @@
                 <input class="uk-input" name="password" type="password" rows="5" placeholder="Ingrese la Contraseña">
               </div>
               <div class="uk-margin">
-                <button type="submit" class="uk-button  button-primary">Registrar</button>
+                <button type="submit" class="uk-button  button-primary">Login</button>
               </div>
             </fieldset>
           </form>
-          <button type="uk-button" class="uk-button  button-primary"><a href = "/autor/login">Login</a></button>
+          <button type="uk-button" class="uk-button  button-primary"><a href = "registro">Registrarse</a></button>
         </div>
 
       </div>
