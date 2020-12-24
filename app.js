@@ -6,7 +6,7 @@ import inicioRouter from './routes/inicio.js'
 import blogRouter from './routes/blog.js'
 import contactoRouter from './routes/contacto.js'
 import acercaRouter from './routes/acerca.js'
-import autorRouter from './routes/autor.js'
+import authRouter from './routes/auth.js'
 
 dotenv.config();
 conectarDB();
@@ -18,9 +18,9 @@ server.set('views', path.join(process.cwd(), "views"));
 server.set('view engine', 'ejs');
 
 server.use("/", inicioRouter);
-server.use("/acerca", acercaRouter);
-server.use("/blog", blogRouter);
-server.use("/contacto", contactoRouter);
-server.use('/autor', autorRouter);
+server.use('/acerca', acercaRouter);
+server.use('/blog', blogRouter);
+server.use('/contacto', contactoRouter);
+server.use('/auth', authRouter);
 
 server.listen(8080);

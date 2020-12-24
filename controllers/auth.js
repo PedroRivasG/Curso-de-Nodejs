@@ -2,7 +2,7 @@ import {Usuario} from '../models/usuario.js'
 import bcrypt  from 'bcrypt'
 
 export const renderizarRegistro = (req, res) => {
-    res.render("registro.ejs", {path: "Registro"});
+    res.render("registration.ejs", {path: "Registration"});
 }
 export const renderizarLogin = (req, res) => {
     res.render("login.ejs", {path: "Login"});
@@ -11,8 +11,10 @@ export const renderizarLogin = (req, res) => {
 const hashPassword = (password, res, callback) => {
     bcrypt.hash(password, 10, (error, hash) =>{
         if(error){
-            res.status(500).end();        
+            console.log(err); 
+            return res.status(500).send({error: "Something went wront"})        
         }else {
+            console.log(hash)
             callback(hash);
         } 
     });
@@ -24,7 +26,7 @@ export const registro = (req, res) => {
     hashPassword(password, res, (hash) =>{
         const nuevoUsuario = new Usuario({primerNombre:primerNombre, primerApellido:primerApellido, correo:correo, password:hash})
         nuevoUsuario.save().then((usuario) => {
-            res.redirect('/');
+           return res.redirect('/');
         })
         .catch(err => {
             console.log(err);
@@ -36,19 +38,18 @@ export const registro = (req, res) => {
 
 export const login = (req,res) => {
     const {correo, password} = req.body;
-    if(email === "" || password === ""){
-        return res.status(400);
+    if(correo === "" || password === ""){
+        return res.status(400).send({message:"Invalid Credentials"})
     }
+
     Usuario.findOne({correo:correo}, (err, usuario) =>{
         if(Usuario){
-            bcrypt.compare(password, user.password, (err, isValid) =>{
-                if (err){
-                    return res.status(500).json({message:"Error"})
-                }
-                if (isValid){
-                    registro.redirect("/");
+            bcrypt.compare(password, usuario.password, (err, isValid) =>{
+                console.log(err, isValid)
+                if (isValid) {
+                   return res.redirect('/');
                 }else {
-                    res.status(400).json({message:"Invalid data"})
+                    return res.status(400).json({message:"Datos incorrectos"})
                 }
             })
         }
